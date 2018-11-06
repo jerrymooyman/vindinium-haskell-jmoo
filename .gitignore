@@ -1,0 +1,5 @@
+.stack-work/
+vindinium-haskell-jmoo.cabal
+*~
+dist/
+tags
