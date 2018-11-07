@@ -3,21 +3,27 @@ module Bot
         )
     where
 
-import Vindinium
+import           Vindinium
 
-import System.Random (getStdRandom, randomR)
-import Data.Maybe (fromJust)
-import Control.Monad (liftM)
-import Control.Monad.IO.Class (liftIO)
+import           Control.Monad          (liftM)
+import           Control.Monad.IO.Class (liftIO)
+import           Data.Maybe             (fromJust)
+import           System.Random          (getStdRandom, randomR)
 
 bot :: Bot
 bot = randomBot
 
 myBot :: Bot
-myBot = error "it's up to you :)"
+--myBot = error "it's up to you :)"
+myBot s = do
+  liftIO $ print "test"
+  liftM fromJust $ liftIO $ pickRandom [Stay, North, South, East, West]
+
 
 randomBot :: Bot
-randomBot _ = liftM fromJust $ liftIO $ pickRandom [Stay, North, South, East, West]
+randomBot s = do
+  liftIO $ print s
+  liftM fromJust $ liftIO $ pickRandom [Stay, North, South, East, West]
 
 inBoard :: Board -> Pos -> Bool
 inBoard b (Pos x y) =
