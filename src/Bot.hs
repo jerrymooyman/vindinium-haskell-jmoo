@@ -17,6 +17,7 @@ myBot :: Bot
 --myBot = error "it's up to you :)"
 myBot s = do
   liftIO $ print "test"
+  --use lenses to get hero from game state
   liftM fromJust $ liftIO $ pickRandom [Stay, North, South, East, West]
 
 

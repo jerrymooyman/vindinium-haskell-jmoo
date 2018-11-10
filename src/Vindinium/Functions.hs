@@ -1,7 +1,7 @@
 
 
 
-module Vindinium.Fuctions
+module Vindinium.Functions
   where
 
 import           Vindinium.Types
